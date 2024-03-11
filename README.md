@@ -2,6 +2,17 @@
 
 # Arbitrum to Optimism NFT Bridge
 
+This is a test project that allows for an NFT collection to be minted on one chain (Arbitrum Sepolia) and then bridged over to another chain (Optimism Sepolia).
+
+Feel free to try it out yourself:
+
+1.  Head to https://sepolia.arbiscan.io/address/0xc743e924f7330b6b9f2e2198ea3c6dc8780527d9#writeProxyContract and use the `openMint()` function to mint yourself an NFT on **Arbitrum Sepolia**.
+2.  Call the `deposit()` function to deposit your NFT. This will burn it from your wallet.
+3.  A bridging process I set up using **Openzeppelin Defender Monitor + Actions** will pick up the `Deposit` event and mint the same NFT for you on the **Optimism Sepolia** NFT contract at https://sepolia-optimism.etherscan.io/address/0x8100e69ae3b94370ee16c1d167b793446b608499
+4.  The NFT will now be in your same wallet but on the **Optimism Sepolia** chain.
+5.  Feel free to bridge your NFT back to Arbitrum Sepolia by calling the `deposit()` function at https://sepolia-optimism.etherscan.io/address/0x8100e69ae3b94370ee16c1d167b793446b608499#writeProxyContract
+6.  A bridging process I set up using **Openzeppelin Defender Monitor + Actions** will pick up the `Deposit` event and mint the same NFT back to you on **Arbitrum Sepolia**.
+
 ### To deploy Upgradeable ArbitrumNFT contract
 
 `npx hardhat deploy-arb --network arbSepolia`
