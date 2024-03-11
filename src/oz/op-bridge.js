@@ -532,9 +532,9 @@ exports.handler = async function (payload) {
     speed: "fast",
   });
   // Call the withdraw function on Optimism, this action is connected to Arbitrum Monitor
-  const addressBridge = "0xC743E924F7330b6B9f2E2198EA3c6dc8780527d9";
+  const addressBridge = "0x8100e69Ae3b94370ee16C1D167b793446B608499";
   const provider = new ethers.providers.WebSocketProvider(
-    process.env.ARB_PROVIDER
+    process.env.OP_PROVIDER
   );
 
   const conditionRequest = payload.request.body;
